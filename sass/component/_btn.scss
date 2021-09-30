@@ -1,0 +1,51 @@
+// 色
+$btn-background-color: #fff;
+$btn-border-color: #000;
+$btn-font-color: #000;
+
+// サイズ
+$btn-width: 200px;
+$btn-height: 60px;
+$btn-border-width: 1px;
+$btn-border-radius: 0;
+$btn-font-size: 1.6rem;
+$btn-font-weight: 700;
+$btn-letter-spacing: 0.04em;
+
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	width: $btn-width;
+	max-width: 100%;
+	border: 2px solid $btn-border-color;
+	color: $btn-font-color;
+	letter-spacing: $btn-letter-spacing;
+	font-weight: $btn-font-weight;
+	// line-height自動算出
+	line-height: ($btn-height - $btn-border-width * 2);
+	height: $btn-height;
+	margin: 0;
+	background-color: $btn-background-color;
+	text-decoration: none;
+	font-size: $btn-font-size;
+	text-align: center;
+	-webkit-appearance: none;
+	transition: all 0.3s ease 0s;
+
+	// 要素が無効でない場合
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	// ホバー、フォーカス
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+
+	// Mozilla対策
+	&::-moz-foucus-inner {
+		padding: 0;
+		border: none;
+	}
+}
